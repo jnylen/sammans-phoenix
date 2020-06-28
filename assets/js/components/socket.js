@@ -9,6 +9,7 @@ import userJoined from "../events/user_joined";
 import userLeft from "../events/user_left";
 import videoQueued from "../events/video_queued";
 import videoPlaying from "../events/video_playing";
+import videoPaused from "../events/video_playing";
 
 const connectionSocket = () => {
   const roomDiv = document.querySelector("#room-show");
@@ -49,11 +50,15 @@ const connectionSocket = () => {
       toggleClass(connectionDiv, "bg-gray-600");
     });
 
+  // Set it globally
+  window.channelSocket = channel;
+
   // Events
-  userJoined(channel);
-  userLeft(channel);
-  videoQueued(channel);
-  videoPlaying(channel);
+  userJoined();
+  userLeft();
+  videoQueued();
+  videoPlaying();
+  videoPaused();
 
   // Buttons
   const addVideo = () => {

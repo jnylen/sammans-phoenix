@@ -8,7 +8,7 @@
 <main class="h-screen max-h-screen" id="room-show">
     <section class="flex h-full">
         <div class="w-3/4 h-full flex flex-col relative">
-            <header id="search" class="transition-transform duration-500 ease-in-out h-12 bg-cool-gray-900 absolute top-0 right-0 mt-4 rounded-lg overflow-hidden mr-4 flex items-center hidden">
+            <header id="search" class="transition-transform duration-500 ease-in-out h-12 bg-cool-gray-900 absolute top-0 right-0 mt-4 rounded-lg overflow-hidden mr-4 flex items-center hidden z-10">
                 <input id="search-field" class="block w-full bg-cool-gray-900 pl-4 text-gray-100 text-sm h-full" placeholder="Search or add video" />
                 <div class="p-2 h-full">
                     <button id="actual-search-button" class="bg-cool-gray-800 hover:bg-cool-gray-700 text-white rounded-lg h-full px-4 text-cool-gray-300">

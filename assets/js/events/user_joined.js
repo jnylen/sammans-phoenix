@@ -1,7 +1,7 @@
 import tinyTemplate from "../templates/tiny.js";
 
-const userJoined = (channel) => {
-  channel.on("user_joined", (payload) => {
+const userJoined = () => {
+  window.channelSocket.on("user_joined", (payload) => {
     tinyTemplate(payload);
   });
 };

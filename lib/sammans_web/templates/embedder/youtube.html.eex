@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="https://unpkg.com/video.js@7.8.3/dist/video-js.min.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@videojs/themes@1/dist/city/index.css"/>
 
 <video
     id="actualPlayer"
-    class="video-js vjs-default-skin h-full w-full"
+    class="video-js vjs-theme-city h-full w-full"
     controls
     autoplay
     width="640" height="264"

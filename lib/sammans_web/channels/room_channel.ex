@@ -53,6 +53,15 @@ defmodule SammansWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("room:video_playing", _, socket) do
+    broadcast!(socket, "video_playing", %{
+      "name" => socket.assigns.user_name,
+      "message" => "started playing.."
+    })
+
+    {:noreply, socket}
+  end
+
   def handle_info(:after_join, socket) do
     broadcast!(socket, "user_joined", %{
       "name" => socket.assigns.user_name,
