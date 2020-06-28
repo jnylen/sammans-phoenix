@@ -1,0 +1,67 @@
+<script>
+    window.channelId = "<%= @conn.params["id"] %>";
+    window.userName = "<%= Faker.Superhero.name() %>";
+    window.userToken = "<%= Nanoid.generate(64) %>";
+    window.participants = [];
+</script>
+
+<main class="h-screen max-h-screen" id="room-show">
+    <section class="flex h-full">
+        <div class="w-3/4 h-full flex flex-col relative">
+            <header id="search" class="transition-transform duration-500 ease-in-out h-12 bg-cool-gray-900 absolute top-0 right-0 mt-4 rounded-lg overflow-hidden mr-4 flex items-center hidden z-10">
+                <input id="search-field" class="block w-full bg-cool-gray-900 pl-4 text-gray-100 text-sm h-full" placeholder="Search or add video" />
+                <div class="p-2 h-full">
+                    <button id="actual-search-button" class="bg-cool-gray-800 hover:bg-cool-gray-700 text-white rounded-lg h-full px-4 text-cool-gray-300">
+                        <svg class="h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="h-full">
+				<%= render SammansWeb.RoomView, "_default_page.html" %>
+				<div id="player" class="h-full w-full hidden z-20"></div>
+            </div>
+        </div>
+        <div class="w-1/4 h-full bg-cool-gray-800 text-cool-gray-300 space-y-6 shadower overflow-y flex flex-col z-10">
+            <!-- Side header -->
+            <div class="flex">
+                <button id="search-button" class="bg-cool-gray-900 hover:opacity-75 rounded-lg mt-4 px-4 py-3 ml-4 mr-2 text-cool-gray-300">
+                    <svg class="h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div class="flex-1 flex bg-cool-gray-900 py-3 px-4 rounded-lg items-center mt-4 mr-4">
+                    <h2 class="text-cool-gray-300 flex-1 text-xs" id="room-title">Connecting..</h2>
+                    <div class="flex h-5">
+                        <svg class="h-5 w-5 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                        <span class="flex items-center">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+
+                            <span class="pl-2 text-sm" id="user-count">0</span>
+                        </span>
+                    </div>
+                    <span id="connection" class="h-2 w-2 rounded-full bg-gray-600 ml-2"></span>
+                </div>
+            </div>
+
+            <!-- Events -->
+
+            <div class="flex-1 px-4 overflow-auto overflow-x-hidden">
+				<div id="events_box">
+            	</div>
+			</div>
+
+            <!-- Input area/Next -->
+
+            <div class="text-cool-gray-300 w-full bg-cool-gray-900 flex items-center justify-between py-3 pl-4 pr-2">
+                <div class="flex flex-col w-2/3">
+                    <span class="font-semibold text-xs">Next up</span>
+                    <span class="text-xs text-cool-gray-400" id="nothing_queued">Nothing queued..</span>
+                    <p class="text-xs text-cool-gray-400 truncate hidden" id="upcoming"></p>
+                </div>
+
+                <div class="bg-transparent p-3 rounded-full hover:bg-cool-gray-800 cursor-pointer">
+                    <svg class="h-5	w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

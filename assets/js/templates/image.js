@@ -1,0 +1,26 @@
+import Mustache from "mustache";
+
+const imageTemplate = (values) => {
+  let template = `
+        <div class="bg-cool-gray-900 rounded-full p-3 h-12 w-12 flex items-center justify-center">
+            <img class="w-full h-full" src="{{image}} " />
+        </div>
+        <div class="pl-4 text-sm">
+          <h4 class="font-black">{{name}}</h4>
+          <span>{{message}}</span>
+        </div>
+    `;
+
+  let childElement = document.createElement("div");
+  childElement.className = "flex items-center text-cool-gray-300 mb-2";
+
+  let html = Mustache.render(template, values);
+  childElement.innerHTML = html;
+
+  const eventBox = document.querySelector("#events_box");
+
+  eventBox.appendChild(childElement);
+  eventBox.scrollIntoView(false);
+};
+
+export default imageTemplate;

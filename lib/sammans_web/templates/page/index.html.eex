@@ -1,0 +1,9 @@
+<main role="main" class="bg-cool-gray-700 w-screen h-screen flex justify-center items-center">
+  <div class="w-2/4 bg-white rounded-lg shadow-lg p-12 flex items-center flex-col">
+    <h1 class="text-2xl text-indigo-900 font-medium">Create your room to play videos</h1>
+    <p class="text-center text-indigo-900 pt-2 pb-8">
+      Officia anim magna est sint cillum ullamco magna in ea cillum dolor minim qui. Officia qui do ullamco irure proident eu ut enim cillum reprehenderit proident.
+    </p>
+    <%= button("Create", to: "/rooms", method: :post, class: "bg-indigo-500 hover:bg-indigo-400 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-indigo-500 rounded mt-6") %>
+  </div>
+</main>
