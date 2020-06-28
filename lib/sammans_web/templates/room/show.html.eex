@@ -1,0 +1,63 @@
+<script>
+    window.channelId = "<%= @conn.params["id"] %>";
+    window.userName = "<%= Faker.Superhero.name() %>";
+    window.userToken = "<%= Nanoid.generate(64) %>";
+    window.participants = [];
+</script>
+
+<main class="h-screen" id="room-show">
+    <section class="flex h-full">
+        <div class="w-3/4 h-full flex flex-col relative">
+            <header id="search" class="transition-transform duration-500 ease-in-out h-12 bg-cool-gray-900 absolute top-0 right-0 mt-4 rounded-lg overflow-hidden mr-4 flex items-center hidden">
+                <input id="search-input" class="block w-full bg-cool-gray-900 pl-4 text-gray-100 text-sm h-full" placeholder="Search or add video" />
+                <div class="p-2 h-full">
+                    <button class="bg-cool-gray-800 hover:bg-cool-gray-700 text-white rounded-lg h-full px-4 text-cool-gray-300">
+                        <svg class="h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+            </header>
+
+            <div id="player" class="h-full">
+                <iframe class="embedly-embed h-full w-full" src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F18150336%3Fapp_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A%2F%2Fvimeo.com%2F18150336&image=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F117311910_1280.jpg&key=internal&type=text%2Fhtml&schema=vimeo" width="500" height="281" scrolling="no" title="Vimeo embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+        <div class="w-1/4 h-full bg-cool-gray-800 text-cool-gray-300 space-y-6 shadow-xl overflow-y flex flex-col">
+            <!-- Side header -->
+            <div class="flex">
+                <button id="search-button" class="bg-cool-gray-900 hover:opacity-75 text-white rounded-lg mt-4 px-4 py-3 ml-4 mr-2 text-cool-gray-300">
+                    <svg class="h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div class="flex-1 flex bg-cool-gray-900 py-3 px-4 rounded-lg items-center mt-4 mr-4">
+                    <h2 class="text-cool-gray-300 flex-1" id="room-title">Connecting..</h2>
+                    <div class="flex h-5">
+                        <svg class="h-5 w-5 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                        <span class="flex items-center">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+
+                            <span class="pl-2 text-sm" id="user-count">0</span>
+                        </span>
+                    </div>
+                    <span id="connection" class="h-2 w-2 rounded-full bg-gray-600 ml-2"></span>
+                </div>
+            </div>
+
+            <!-- Events -->
+
+            <div class="px-6 flex-1" id="events">
+            </div>
+
+            <!-- Input area/Next -->
+
+            <div class="text-cool-gray-300 w-full bg-cool-gray-900 px-6 py-5 flex items-center">
+                <div class="flex-1">
+                    <h6 class="font-semibold mb-1">Upcoming</h6>
+                    <span class="text-sm text-cool-gray-400">Working on the Tailwind UI back-end Laravel app</span>
+                </div>
+
+                <div class="bg-transparent p-1 rounded-full hover:bg-cool-gray-800 cursor-pointer">
+                    <svg class="h-7 w-7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
