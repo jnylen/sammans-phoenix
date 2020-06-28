@@ -1,11 +1,14 @@
 defmodule SammansWeb.RoomChannel do
   use SammansWeb, :channel
   alias SammansWeb.Presence
+  alias Sammans.Embedder
 
   # def join("room:lobby", _message, socket) do
   #   {:ok, socket}
   # end
 
+  @spec join(<<_::40, _::_*8>>, nil | maybe_improper_list | map, Phoenix.Socket.t()) ::
+          {:ok, Phoenix.Socket.t()}
   def join("room:" <> _room_id, params, socket) do
     Process.flag(:trap_exit, true)
     # :timer.send_interval(5000, :ping)
@@ -20,12 +23,40 @@ defmodule SammansWeb.RoomChannel do
     {:noreply, socket}
   end
 
-  def handle_info(:after_join, socket) do
-    IO.inspect(socket)
+  def handle_in("room:video_add", %{"url" => url}, socket) do
+    # Do something with the url here
 
+    Embedder.incoming_url(url)
+    |> IO.inspect()
+    |> case do
+      {:ok, map} ->
+        # Handle play/queue here
+        broadcast!(socket, "video_queued", %{
+          "name" => socket.assigns.user_name,
+          "html" => Map.get(map, :html),
+          "scripts" => Map.get(map, :scripts),
+          "message" => """
+          <span class=\"w-auto\">added</span>
+          <span class=\"font-bold truncate w-1/3 px-1 flex-shrink\" title=\"#{
+            Map.get(map, :title)
+          }\">#{Map.get(map, :title)}</span>
+          <span class=\"w-auto\">to the queue</span>
+          """
+        })
+
+      _ ->
+        # How to handle this?
+
+        nil
+    end
+
+    {:noreply, socket}
+  end
+
+  def handle_info(:after_join, socket) do
     broadcast!(socket, "user_joined", %{
       "name" => socket.assigns.user_name,
-      "message" => "Joined the room",
+      "message" => "joined the room",
       "image" => generate_image(socket.assigns.user_name)
     })
 
@@ -47,16 +78,11 @@ defmodule SammansWeb.RoomChannel do
   def terminate(_reason, socket) do
     broadcast!(socket, "user_left", %{
       "name" => socket.assigns[:user_name],
-      "message" => "Left the room",
+      "message" => "left the room",
       "image" => generate_image(socket.assigns[:user_name])
     })
 
     :ok
-  end
-
-  def handle_info(:ping, socket) do
-    push(socket, "new:msg", %{user: "SYSTEM", body: "ping"})
-    {:noreply, socket}
   end
 
   defp generate_image(user_name), do: "https://robohash.org/#{URI.encode(user_name)}?set=set3"

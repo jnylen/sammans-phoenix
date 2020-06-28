@@ -1,8 +1,8 @@
-import imageTemplate from "../templates/image.js";
+import tinyTemplate from "../templates/tiny.js";
 
 const userLeft = (channel) => {
   channel.on("user_left", (payload) => {
-    imageTemplate(payload);
+    tinyTemplate(payload);
   });
 };
 

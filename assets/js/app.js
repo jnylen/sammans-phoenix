@@ -16,7 +16,6 @@ import { connectionSocket, socket } from "./components/socket";
 import "phoenix_html";
 import "./components/player.js";
 import "./components/search.js";
-//import "./components/socket.js";
 
 import init from "./components/init.js";
 

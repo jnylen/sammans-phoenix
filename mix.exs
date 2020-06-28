@@ -46,7 +46,8 @@ defmodule Sammans.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:faker, "~> 0.13.0"},
-      {:nanoid, "~> 2.0.3"}
+      {:nanoid, "~> 2.0.3"},
+      {:tesla, "~> 1.3"}
     ]
   end
 

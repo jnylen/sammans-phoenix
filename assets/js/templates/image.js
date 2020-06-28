@@ -16,7 +16,11 @@ const imageTemplate = (values) => {
 
   let html = Mustache.render(template, values);
   childElement.innerHTML = html;
-  document.querySelector("#events").appendChild(childElement);
+
+  const eventBox = document.querySelector("#events_box");
+
+  eventBox.appendChild(childElement);
+  eventBox.scrollIntoView(false);
 };
 
 export default imageTemplate;

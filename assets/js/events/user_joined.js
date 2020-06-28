@@ -1,8 +1,8 @@
-import imageTemplate from "../templates/image.js";
+import tinyTemplate from "../templates/tiny.js";
 
 const userJoined = (channel) => {
   channel.on("user_joined", (payload) => {
-    imageTemplate(payload);
+    tinyTemplate(payload);
   });
 };
 
