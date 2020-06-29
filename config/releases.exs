@@ -35,7 +35,7 @@ config :sammans, SammansWeb.Endpoint,
 # If you are doing OTP releases, you need to instruct Phoenix
 # to start each relevant endpoint:
 #
-#     config :sammans, SammansWeb.Endpoint, server: true
+config :sammans, SammansWeb.Endpoint, server: true
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
