@@ -74,7 +74,9 @@ const connectionSocket = () => {
 
   const searchInput = document.querySelector("#search-field");
   searchInput.addEventListener("keyup", () => {
-    addVideo();
+    if (event.keyCode == 13) {
+      addVideo();
+    }
   });
 };
 

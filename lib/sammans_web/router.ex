@@ -1,5 +1,6 @@
 defmodule SammansWeb.Router do
   use SammansWeb, :router
+  import Plug.BasicAuth
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,6 +8,8 @@ defmodule SammansWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+
+    plug :basic_auth, username: "till", password: "sammans"
   end
 
   pipeline :api do
