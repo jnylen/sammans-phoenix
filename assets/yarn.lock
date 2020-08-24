@@ -4276,10 +4276,10 @@ overlayscrollbars@^1.12.0:
   resolved "https://registry.yarnpkg.com/overlayscrollbars/-/overlayscrollbars-1.12.0.tgz#e3e257bbb8a179760c2c712ad08ac2c78583c9f6"
   integrity sha512-zJGYLeBfaPx2VmiDfBMNTPzm9N8w8wZ6M7dm1ee8TGuet8tsK4nxOzGvEEu0SmueqMHQxhLsstf7iTWCGiYa9Q==
 
-overlayscrollbarschat@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/overlayscrollbarschat/-/overlayscrollbarschat-0.2.0.tgz#b0c79fa0c5eb78711f5c8ef1e0ed064c4b9666bc"
-  integrity sha512-6De/5CSg6Ux8Ri4eLVWL7MQQZdixWUgkqHEqZH2sprpAAX1iZuuqNLQoPqIdkhCir3+iT6OSlTpGvTjA68KOrQ==
+overlayscrollbarschat@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/overlayscrollbarschat/-/overlayscrollbarschat-0.3.0.tgz#50cb5b0b500058addd6d07453d904e0ab2b259ab"
+  integrity sha512-55oS0bTXRDz63A/cMU6dE5/vkvaxggtV/zfMXJJBARxdUijBVowhmac6QHhhc67D0PqZYmK8NA1SP10VRbMKeg==
 
 p-limit@^2.0.0, p-limit@^2.2.0, p-limit@^2.2.1, p-limit@^2.3.0:
   version "2.3.0"
