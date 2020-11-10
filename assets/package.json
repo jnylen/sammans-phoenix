@@ -7,7 +7,7 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
-    "@kollegorna/js-utils": "^1.0.4",
+    "@kollegorna/js-utils": "^1.0.7",
     "@tailwindcss/ui": "^0.7.2",
     "mustache": "^4.0.1",
     "overlayscrollbars": "^1.13.0",
