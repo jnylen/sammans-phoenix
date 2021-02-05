@@ -787,10 +787,10 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
-  version "7.10.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.3.tgz#670d002655a7c366540c67f6fd3342cd09500364"
-  integrity sha512-RzGO0RLSdokm9Ipe/YD+7ww8X2Ro79qiXZF3HU9ljrM+qnJmH1Vqth+hbiQZy761LnMJTMitHDuKVYTk3k4dLw==
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+  version "7.12.13"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.13.tgz#0a21452352b02542db0ffb928ac2d3ca7cb6d66d"
+  integrity sha512-8+3UMPBrjFa/6TtKi/7sehPKqfAm4g6K+YQjyyFOLUTxzOngcRZTlAVY8sc2CORJYqdHQY8gRPHmn+qo15rCBw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -931,24 +931,33 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
-"@videojs/http-streaming@2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@videojs/http-streaming/-/http-streaming-2.2.4.tgz#c71bb63dbc4749e35193c4c334430bd8ce728ec0"
-  integrity sha512-gzT46RpAEegOhMId/zZ6uXCVGDMPOv8qmoTykBuvd6/4lVM3lZ1ZJCq0kytAkisDuDKipy93gP46oZEtonlc/Q==
+"@videojs/http-streaming@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@videojs/http-streaming/-/http-streaming-2.4.2.tgz#0289c1833e33f3242d1faf5f52a4052ec15abdcf"
+  integrity sha512-yXT85ao2t9Sg/aQN2MV1AYikoRToxCaHD8rRR1+SuOWOv9+z8+M4X9ZvxIdFF3pFgZ67Widp/6xyRrDn2u2QWQ==
   dependencies:
-    "@babel/runtime" "^7.5.5"
-    "@videojs/vhs-utils" "^2.2.1"
+    "@babel/runtime" "^7.12.5"
+    "@videojs/vhs-utils" "^2.3.0"
     aes-decrypter "3.1.0"
-    global "^4.3.2"
+    global "^4.4.0"
     m3u8-parser "4.5.0"
-    mpd-parser "0.14.0"
-    mux.js "5.6.7"
+    mpd-parser "0.15.0"
+    mux.js "5.8.0"
     video.js "^6 || ^7"
 
 "@videojs/vhs-utils@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@videojs/vhs-utils/-/vhs-utils-2.2.1.tgz#78ecea26652268646d5003b1b1a705c9b544f8a2"
   integrity sha512-9Qbwx3LAdkG1jh2HKfninjXDxVZCeaoPcmct/bUcDRmLej68Z9XhLe5d2a9fy1qB+UuQwWg7YySASesWavYNjQ==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    global "^4.3.2"
+    url-toolkit "^2.1.6"
+
+"@videojs/vhs-utils@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@videojs/vhs-utils/-/vhs-utils-2.3.0.tgz#490a3a00dfc1b51d85d5dcf8f8361e2d4c4d1440"
+  integrity sha512-ThSmm91S7tuIJ757ON50K4y7S/bvKN4+B0tu303gCOxaG57PoP1UvPfMQZ90XGhxwNgngexVojOqbBHhTvXVHQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
     global "^4.3.2"
@@ -2275,7 +2284,7 @@ global@4.3.2:
     min-document "^2.19.0"
     process "~0.5.1"
 
-global@^4.3.1, global@^4.3.2, global@~4.4.0:
+global@^4.3.1, global@^4.3.2, global@^4.4.0, global@~4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
   integrity sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
@@ -3003,10 +3012,10 @@ mkdirp@^1.0.3:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mpd-parser@0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/mpd-parser/-/mpd-parser-0.14.0.tgz#f666a80c1e284e46c6f76f010fc4f5292a021148"
-  integrity sha512-HqXQS3WLofcnYFcxv5oWdlciddUaEnN3NasXLVQ793mdnZRrinjz2Yk1DsUYPDYOUWf6ZBBqbFhaJT5LiT2ouA==
+mpd-parser@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/mpd-parser/-/mpd-parser-0.15.0.tgz#2b4836e6bdbd92229110e31b189ed029535aea83"
+  integrity sha512-GfspJVaEnVbWKZQASvh9nsJkvxWh3M/c5Kb2RPnN5ZXPZ7jWWfarWkNKTEuqvoaAKIT8IB/r6PFTWA1GY4fzGg==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@videojs/vhs-utils" "^2.2.1"
@@ -3023,10 +3032,10 @@ mustache@^4.1.0:
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-4.1.0.tgz#8c1b042238a982d2eb2d30efc6c14296ae3f699d"
   integrity sha512-0FsgP/WVq4mKyjolIyX+Z9Bd+3WS8GOwoUTyKXT5cTYMGeauNTi2HPCwERqseC1IHAy0Z7MDZnJBfjabd4O8GQ==
 
-mux.js@5.6.7:
-  version "5.6.7"
-  resolved "https://registry.yarnpkg.com/mux.js/-/mux.js-5.6.7.tgz#d39fc85cded5a1257de9f6eeb5cf1578c4a63eb8"
-  integrity sha512-YSr6B8MUgE4S18MptbY2XM+JKGbw9JDkgs7YkuE/T2fpDKjOhZfb/nD6vmsVxvLYOExWNaQn1UGBp6PGsnTtew==
+mux.js@5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/mux.js/-/mux.js-5.8.0.tgz#1e1ca927b498de5ae48f1284ccada4d88e47e187"
+  integrity sha512-v56I2YPyCq1bVbXW7vcuvQs8iHrDy7AeXsZyG1kxCxBUqUjZD0Xq/cU1wrd5dy9YTxRpvw37aTQ4ILwi40GXiw==
 
 nan@^2.13.2:
   version "2.14.1"
@@ -4682,13 +4691,13 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"video.js@^6 || ^7", video.js@^7.10.2:
-  version "7.10.2"
-  resolved "https://registry.yarnpkg.com/video.js/-/video.js-7.10.2.tgz#5156aabad7820e726d72ea6c32324059c68885a4"
-  integrity sha512-kJTTrqcQn2MhPzWR8zQs6W3HPJWpowO/ZGZcKt2dcJeJdJT0dEDLYtiFdjV37SylCmu66V0flRnV8cipbthveQ==
+"video.js@^6 || ^7", video.js@^7.11.4:
+  version "7.11.4"
+  resolved "https://registry.yarnpkg.com/video.js/-/video.js-7.11.4.tgz#64300cb6def9f17ecba4808ae76ec7c10c952378"
+  integrity sha512-eT9n7YCugHyWNHI2gyK28XoozNmLiW4F9dRYEP6ET/JVmm7oXPhLeVfs5kqcRviquISqWsvsNmhK1b9vvZzyVA==
   dependencies:
     "@babel/runtime" "^7.9.2"
-    "@videojs/http-streaming" "2.2.4"
+    "@videojs/http-streaming" "2.4.2"
     "@videojs/xhr" "2.5.1"
     global "4.3.2"
     keycode "^2.2.0"
