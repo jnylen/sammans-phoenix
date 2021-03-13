@@ -4,12 +4,12 @@ let socket = new Socket("/socket", {
   params: { token: window.userToken },
 });
 
-import { toggleClass } from "@kollegorna/js-utils/src/attribute";
+import { toggleClass } from "@oddcamp/js-utils/src/attribute";
 import userJoined from "../events/user_joined";
 import userLeft from "../events/user_left";
 import videoQueued from "../events/video_queued";
 import videoPlaying from "../events/video_playing";
-import videoPaused from "../events/video_playing";
+import videoPaused from "../events/video_paused";
 
 const connectionSocket = () => {
   const roomDiv = document.querySelector("#room-show");

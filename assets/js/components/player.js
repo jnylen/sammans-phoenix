@@ -3,7 +3,7 @@ import init from "./init.js";
 import playerjs from "player.js";
 import videoJS from "./players/video.js";
 
-import { toggleClass } from "@kollegorna/js-utils/src/attribute";
+import { addClass, removeClass } from "@oddcamp/js-utils/src/attribute";
 import loadScript from "../helpers/load_script";
 
 const Player = (data) => {
@@ -23,8 +23,8 @@ const Player = (data) => {
     });
 
     // Shouldn't be a toggle...
-    toggleClass(defaultPage, "hidden");
-    toggleClass(playerNode, "hidden");
+    addClass(defaultPage, "hidden");
+    removeClass(playerNode, "hidden");
   });
 };
 

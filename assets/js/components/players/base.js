@@ -14,6 +14,7 @@ const playTracker = () => {
 
 const pauseTracker = () => {
   console.log("Clicked pause..");
+  window.channelSocket.push("room:video_paused", {});
 };
 
 const endedTracker = () => {

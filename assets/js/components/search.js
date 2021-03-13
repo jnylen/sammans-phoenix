@@ -1,6 +1,6 @@
 import init from "./init.js";
 
-import { toggleClass } from "@kollegorna/js-utils/src/attribute";
+import { toggleClass } from "@oddcamp/js-utils/src/attribute";
 
 init(() => {
   const searchDiv = document.querySelector("#search");

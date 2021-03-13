@@ -9,7 +9,7 @@ defmodule SammansWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
 
-    plug :basic_auth, username: "till", password: "sammans"
+    # plug :basic_auth, username: "till", password: "sammans"
   end
 
   pipeline :api do
