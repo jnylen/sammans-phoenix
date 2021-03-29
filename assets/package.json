@@ -9,7 +9,7 @@
   "dependencies": {
     "@oddcamp/js-utils": "^1.1.0",
     "@tailwindcss/ui": "^0.7.2",
-    "mustache": "^4.1.0",
+    "mustache": "^4.2.0",
     "overlayscrollbars": "^1.13.1",
     "overlayscrollbarschat": "^0.3.0",
     "phoenix": "file:../deps/phoenix",
