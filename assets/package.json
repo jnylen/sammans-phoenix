@@ -17,7 +17,7 @@
     "player.js": "^0.1.0",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.1.1",
-    "tailwindcss": "^2.2.4",
+    "tailwindcss": "^2.2.6",
     "video.js": "^7.13.3"
   },
   "devDependencies": {
